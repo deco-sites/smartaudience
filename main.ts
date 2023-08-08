@@ -12,7 +12,7 @@ import site from "./site.json" assert { type: "json" };
 
 await start($live(manifest, site), {
   plugins: [
-    pluginPartytown({ proxyUrl: '/proxy', mainWindowAccessors: ["DL"] }),
+    pluginPartytown({ forward:{['dataLayer.push']}}),
     tailwindPlugin,
   ],
 });
